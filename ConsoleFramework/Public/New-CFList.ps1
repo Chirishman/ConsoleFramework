@@ -7,8 +7,11 @@
         [string[]]$Items
     )
 
-    $FolderList = [ConsoleFramework.Controls.ListBox]::new()
-    $FolderList.Name = $Name
+    $FolderList = New-Object ConsoleFramework.Controls.ListBox -Property @{
+		Name = $Name
+		Margin = New-Object ConsoleFramework.Core.Thickness -Property @{Top = 2; Bottom = 2; Left = 2; Right = 2}
+	}
+
     $Items | %{
         $FolderList.Items.Add($_)
     }

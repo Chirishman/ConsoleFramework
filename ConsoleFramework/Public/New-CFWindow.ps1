@@ -3,18 +3,31 @@
     Param(
         [String]$Title,
         [String]$Name,
-        [int]$Height,
-        [int]$Width,
+        $Height,
+        $Width,
         [ConsoleFramework.Core.Thickness]$Margin,
+		[string]$HorizontalAlignment='Left',
+		[string]$VerticalAlignment='Top',
         $Content
     )
-    $Window = [ConsoleFramework.Controls.Window]::new()
+    $WC = @{
+		Title = $Title
+		Name = $Name
+		Margin = $Margin
+		HorizontalAlignment = $HorizontalAlignment
+		VerticalAlignment = $VerticalAlignment
+		Content = $Content
+	}
+	
+		
+	if($Height){
+		$WC.Height = $Height
+	}
+	
+	if($Width){
+		$WC.Width = $Width
+	}
 
-    $Window.Title = $Title
-    $Window.Name = $Name
-    $Window.Height = 15
-	$window.Width = 20
-    $Window.Margin = $Margin
-    $Window.Content = $Content
+	$Window = New-Object ConsoleFramework.Controls.Window -Property $WC
     $Window
 }
