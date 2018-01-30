@@ -9,8 +9,10 @@
 
     $FolderList = New-Object ConsoleFramework.Controls.ListBox -Property @{
 		Name = $Name
-		Margin = New-Object ConsoleFramework.Core.Thickness -Property @{Top = 2; Bottom = 2; Left = 2; Right = 2}
+		#Margin = New-Object ConsoleFramework.Core.Thickness -Property @{Top = 2; Bottom = 2; Left = 2; Right = 2}
 	}
+
+	#$FolderList.Add_Click({$AppInstance.Exit()})
 
     $Items | %{
         $FolderList.Items.Add($_)

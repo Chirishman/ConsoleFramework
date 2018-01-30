@@ -39,6 +39,7 @@
     <Compile Include="ConsoleFramework\Public\New-CFMenu.ps1" />
     <Compile Include="ConsoleFramework\Public\New-CFWindow.ps1" />
     <Compile Include="ConsoleFramework\Public\New-CFWindowHost.ps1" />
+    <Compile Include="ConsoleFramework\Public\New-CFTreeView.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsoleFramework\dlls\Binding.dll" />
